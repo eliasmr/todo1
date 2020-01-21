@@ -1,0 +1,38 @@
+package Model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
+/**
+ * The persistent class for the tipo_producto database table.
+ * 
+ */
+@Entity
+@Table(name="tipo_producto")
+public class TipoProducto implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id 
+	private int id;
+
+	private String descripcion;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+}

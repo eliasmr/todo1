@@ -1,0 +1,8 @@
+package com.todo1.Config.tipoProductoRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import Model.TipoProducto;
+
+public interface  TipoProductoRepository extends JpaRepository<TipoProducto, Long>{
+}

@@ -1,0 +1,45 @@
+package com.apiresttodo1.model.services;
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.apiresttodo1.model.dao.TipoProductoRepository;
+import com.apiresttodo1.model.entity.TipoProducto;
+
+@Service
+public class TipoProductoImpl implements TipoProductoService{
+
+	@Autowired
+	private TipoProductoRepository tipoProductoRepository;
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<TipoProducto> findall() {
+		return (List<TipoProducto>) tipoProductoRepository.findAll();
+	}
+
+	@Override
+	@Transactional
+	public TipoProducto save(TipoProducto tipoProducto) {
+		// TODO Auto-generated method stub
+		return tipoProductoRepository.save(tipoProducto);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+	 tipoProductoRepository.deleteById(id);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public TipoProducto findById(Long id) {
+		// TODO Auto-generated method stub
+		return tipoProductoRepository.findById(id).orElse(null);
+	}
+
+}

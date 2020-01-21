@@ -1,0 +1,75 @@
+package DAO;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import DAO.CompraDAO;
+import Model.Compra;
+
+@Repository
+public class CompraDAOImp  implements CompraDAO{
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public boolean saveCompra(Compra Compra) {
+		boolean status=false;
+		try {
+			sessionFactory.getCurrentSession().save(Compra);
+			status=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public List<Compra> getCompras() {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Compra> query=currentSession.createQuery("from Compra", Compra.class);
+		List<Compra> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public boolean deleteCompra(Compra compra) {
+		boolean status=false;
+		try {
+			sessionFactory.getCurrentSession().delete(compra);
+			status=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	@Override
+	public List<Compra> getCompraByID(Compra compra) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Compra> query=currentSession.createQuery("from Compra where id=:id", Compra.class);
+		query.setParameter("id", compra.getId());
+		List<Compra> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public boolean updateCompra(Compra compra) {
+		boolean status=false;
+		try {
+			sessionFactory.getCurrentSession().update(compra);
+			status=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
+	
+
+}

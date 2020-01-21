@@ -1,0 +1,21 @@
+package com.apiresttodo1.dto;
+
+import java.io.Serializable;
+
+import com.apiresttodo1.model.entity.TipoProducto;
+
+public class ProductoDto implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -601919183699348066L;
+
+	private Long id;
+	
+	private String nombre;
+	private String descripcion;
+	
+	private TipoProducto tipoProducto;
+	
+}

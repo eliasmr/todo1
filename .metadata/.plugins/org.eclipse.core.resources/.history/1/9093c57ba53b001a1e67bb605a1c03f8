@@ -1,0 +1,19 @@
+package Service;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
+
+import Model.TipoProducto;
+
+@Service
+public interface TipoProductoService extends JpaRepository<TipoProducto, Long>{
+
+	
+	public boolean saveTipoProducto(TipoProducto tipoProducto);
+	public List<TipoProducto> getTipoProductos();
+	public boolean deleteTipoProducto(TipoProducto tipoProducto);
+	public List<TipoProducto> getTipoProductoByID(TipoProducto tipoProducto);
+	public boolean updateTipoProducto(TipoProducto tipoProducto);
+}

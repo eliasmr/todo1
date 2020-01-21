@@ -1,0 +1,38 @@
+<h3>Crear Tipo Producto</h3>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" >
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="tipoproductosaveform" #savetipoproducto (ngSubmit)="saveTipoProducto(saveTipoProducto)">
+          <div class="form-group">
+              <label for="descripcion">Nombre Tipo producto</label>
+              <input type="text" class="form-control"  formControlName="descripcion" data-toggle="tooltip" 
+                 data-placement="right" title="Enter Client Name" >
+              <div class="alert alert-danger" *ngIf = "(TipoProductoDescripcion.touched) && (TipoProductoDescripcion.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="TipoProductoDescripcion.errors.required">Name is Required</span>
+                    <span *ngIf = "TipoProductoDescripcion.errors.minlength"> 
+                        MinLength Error 
+                    </span>                   
+                </div>
+          </div>
+  
+  
+          <button type="submit" class="btn btn-success">Agregar Tipo Producto</button>
+      </form>
+  </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div [hidden]="!submitted">
+         <h4>Tipo Producto Agregado Exitosamente!</h4>
+         <button (click)="addTipoProductoForm()" class='btn btn-primary'>Agregar Tipo Producto</button>
+      </div>      
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+

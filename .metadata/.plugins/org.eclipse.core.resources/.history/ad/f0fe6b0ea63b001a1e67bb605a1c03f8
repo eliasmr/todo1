@@ -1,0 +1,5 @@
+package com.todo1.repositoryListProducto;
+
+public class TipoProductoRepository {
+
+}

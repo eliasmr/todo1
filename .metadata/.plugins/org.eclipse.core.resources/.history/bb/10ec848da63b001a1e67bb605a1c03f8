@@ -1,0 +1,21 @@
+package Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.todo1.tipoProductoRepository.TipoProductoRepository;
+
+import Model.TipoProducto;
+
+@Service
+public interface TipoProductoService{
+
+	private final TipoProductoRepository tipoProductoRepository;
+	
+	public boolean saveTipoProducto(TipoProducto tipoProducto);
+	public List<TipoProducto> getTipoProductos();
+	public boolean deleteTipoProducto(TipoProducto tipoProducto);
+	public List<TipoProducto> getTipoProductoByID(TipoProducto tipoProducto);
+	public boolean updateTipoProducto(TipoProducto tipoProducto);
+}

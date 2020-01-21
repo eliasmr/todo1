@@ -1,0 +1,5 @@
+package com.apiresttodo1.model.dao;
+
+public interface TipoProducto {
+
+}

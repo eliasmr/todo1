@@ -1,0 +1,38 @@
+package com.apiresttodo1.model.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.apiresttodo1.model.dao.TipoProductoRepository;
+import com.apiresttodo1.model.entity.TipoProducto;
+
+@Service
+public class TipoProductoImpl implements TipoProductoService{
+
+	private TipoProductoRepository tipoProductoRepository;
+	@Override
+	public List<TipoProducto> findall() {
+		
+		return null;
+	}
+
+	@Override
+	public TipoProducto save(TipoProducto tipoProducto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TipoProducto delete(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TipoProducto findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

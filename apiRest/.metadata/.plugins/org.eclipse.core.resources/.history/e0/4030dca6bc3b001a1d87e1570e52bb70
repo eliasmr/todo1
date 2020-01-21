@@ -1,0 +1,9 @@
+package com.apiresttodo1.model.services;
+
+public interface ProductoService {
+
+	public List<Producto> findall(); 
+	public Producto save(TipoProducto tipoProducto);
+	public void delete(Long id);
+	public TipoProducto findById(Long id);
+}

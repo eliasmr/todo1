@@ -1,0 +1,7 @@
+package com.apiresttodo1.model.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TipoProductoRepository extends JpaRepository<TipoProductoRepository, Long>{
+
+}

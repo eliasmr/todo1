@@ -1,0 +1,40 @@
+package com.apiresttodo1.model.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.apiresttodo1.model.dao.ProductoRepository;
+import com.apiresttodo1.model.entity.Producto;
+
+public class ProductoImpl implements ProductoService{
+
+	@Autowired
+	private ProductoRepository productoRepository;
+	
+	@Override
+	public List<Producto> findall() {
+		// TODO Auto-generated method stub
+		return (List<Producto>) productoRepository.findAll();;
+	}
+
+	@Override
+	public Producto save(Producto Producto) {
+		// TODO Auto-generated method stub
+		return productoRepository.save(Producto);
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		productoRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public Producto findById(Long id) {
+		// TODO Auto-generated method stub
+		return productoRepository.findById(id).orElse(null);
+	}
+
+}

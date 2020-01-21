@@ -1,0 +1,14 @@
+package Service;
+
+import java.util.List;
+
+import Model.TipoProducto;
+
+public interface TipoProductoService{
+	
+	public TipoProducto save(TipoProducto tipoProducto);
+	public List<TipoProducto> findAll();
+	public void delete(Long tipoProducto);
+	public TipoProducto getTipoProductoByID(Long tipoProducto);
+	/*public boolean updateTipoProducto(TipoProducto tipoProducto);*/
+}
